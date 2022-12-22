@@ -8,7 +8,13 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    const setOfArr2 = new Set([...arr2]);
+    const newArray = Array.from(new Set([...arr1.filter((item) => {
+    return setOfArr2.has(item);
+})]));
+    return newArray;
+
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

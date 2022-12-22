@@ -9,9 +9,23 @@
 */
 
 function fibonacci(n) {
-    // Напишите код здесь
+    let prevNumber = 0;
+    let number = 1;
+    if (n === 1) {
+        return 0;
+    }
+    if (n === 2) {
+        return 1;
+    }
+    for (let i=2; i<n; i++) {
+        number = prevNumber + number;
+        prevNumber = number - prevNumber; 
+    }
+    return number;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(fibonacci(4)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
+console.log(fibonacci(8));
+console.log(fibonacci(20));

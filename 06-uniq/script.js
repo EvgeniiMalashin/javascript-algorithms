@@ -8,7 +8,13 @@
 */
 
 function uniq(arr) {
-    // Напишите код здесь
+    const arrUniq = arr.reduce((collector, item) => {
+        if (!collector.includes(item)) {
+          collector.push(item);
+        }
+        return collector;
+    }, []);
+    return arrUniq;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
@@ -16,3 +22,4 @@ function uniq(arr) {
 console.log(uniq([1, 2, 5, 4, 2])); // [1, 2, 5, 4]
 console.log(uniq([3, 3, 3, 5])); // [3, 5]
 console.log(uniq([1, 4, 2, 2, 3, 4, 8])); // [1, 4, 2, 3, 8]
+console.log(uniq([11, 1234, 43543, 7745, 24234, 76774, 2234, 76774, 43543, 11, 1, 2, 4, 5, 3, 3]));
